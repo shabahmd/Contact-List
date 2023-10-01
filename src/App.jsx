@@ -20,3 +20,9 @@ function App() {
       description: 'This is the third card.',
     },
   ];
+
+  return (
+    <div className="App">
+      <h1>Card Components</h1>
+      <div className="card-container">
+        {cardData.map((card) => (
