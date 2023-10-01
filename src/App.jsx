@@ -25,4 +25,13 @@ function App() {
     <div className="App">
       <h1>Card Components</h1>
       <div className="card-container">
-        {cardData.map((card) => (
+        {cardData.map((card) => (        
+      <Card key={card.id} title={card.title} description={card.description} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
