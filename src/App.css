@@ -10,3 +10,13 @@
   max-height: 125px;
   margin-bottom: 10px;
 }
+
+.contact-card p {
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
