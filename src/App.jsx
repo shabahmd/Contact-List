@@ -1,31 +1,34 @@
-import ContactCard from './ContactCard'
-import "./App.css"
+import React, { useEffect, useState } from 'react';
+import ContactCard from './ContactCard';
+import './App.css';
 
 const App = () => {
+
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    fetch('https://randomuser.me/api/')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setResults(data.results);
+      });
+  }, []);
+
   return (
     <div>
-      <ContactCard
-        avatarUrl="https://via.placeholder.com/150"
-        name="jenn Man"
-        email="Jenny the hoe@email.com"
-        age={65}
-      />
-
-      <ContactCard
-        avatarUrl="https://via.placeholder.com/150"
-        name="china Man"
-        email="Forest the simp@email.com"
-        age={235}
-      />
-
-      <ContactCard
-        avatarUrl="https://via.placeholder.com/150"
-        name="paki Man"
-        email="shahab the simp@email.com"
-        age={225}
-      />
+      {results.map((contact, key) => (
+        <div key={key}>
+          <ContactCard
+            avatarUrl={contact.avatarUrl}
+            name={contact.name}
+            email={contact.email}
+            age={contact.age}
+          />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
