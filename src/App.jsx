@@ -32,3 +32,5 @@ const App = () => {
 };
 
 export default App;
+
+hamza is a fucking fagot 
